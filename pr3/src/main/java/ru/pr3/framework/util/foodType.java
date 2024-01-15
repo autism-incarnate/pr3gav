@@ -1,18 +1,12 @@
 package ru.pr3.framework.util;
 
 public enum foodType {
-    FRUIT, VEGETABLE;
+    FRUIT ("Фрукт", "FRUIT"),
+    VEGETABLE ("Овощ", "VEGETABLE");
 
-    public String getFruitType() {
-        switch (this) {
-            case FRUIT:
-                return "Фрукт";
-
-            case VEGETABLE:
-                return "Овощ";
-
-            default:
-                return null;
-        }
-    }
+    private final String rus;
+    private final String eng;
+    foodType(String rus, String eng) { this.rus = rus; this.eng = eng; }
+    public String getFruitNameRus() { return rus; }
+    public String getFruitNameEng() { return eng; }
 }

@@ -1,6 +1,7 @@
 package ru.pr3.framework.managers;
 
 
+import ru.pr3.framework.pages.MenuBar;
 import ru.pr3.framework.pages.PageGoods;
 import ru.pr3.framework.pages.PageHome;
 
@@ -11,6 +12,8 @@ public class PageManager {
     private PageHome pageHome = null;
 
     private PageGoods pageGoods = null;
+
+    private MenuBar menuBar = null;
 
     private PageManager() {
 
@@ -28,6 +31,13 @@ public class PageManager {
             pageHome = new PageHome();
         }
         return pageHome;
+    }
+
+    public MenuBar getMenuInstance() {
+        if(menuBar == null) {
+            menuBar = new MenuBar();
+        }
+        return menuBar;
     }
 
     public PageGoods getGoodsInstance() {
