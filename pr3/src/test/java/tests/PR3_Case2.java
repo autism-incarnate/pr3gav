@@ -5,16 +5,16 @@ import org.testng.annotations.Test;
 import ru.pr3.framework.util.foodType;
 
 @Test
-public class Case1 extends TestBase {
+public class Case2 extends TestBase {
     public void runTest() {
         pageManager.getHomeInstance()
-                .assertPageTitle()
+                .checkPage()
                 .goToGoods()
-                .assertPageTitle()
-                .initTables()
-                .addItem("!Яблоко1", foodType.VEGETABLE, false)
+                .checkPage()
+                .addItem("^_^", foodType.FRUIT, true)
                 .resetData()
+                .checkPage()
                 .goHome()
-                .assertPageTitle();
+                .checkPage();
     }
 }
